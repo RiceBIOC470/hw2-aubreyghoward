@@ -5,7 +5,7 @@ function [ORFlength,start_pos,stop_pos] = findORF(dnaseq)
 %fill in here. 
 dnaseq = lower(dnaseq);
 
-start = strfind(dnaseq,'atg')%finds start codon
+start = strfind(dnaseq,'atg');%finds start codon
 
 if length(start)< 1
     disp ('no start codons. please pick a new sequence.')
@@ -15,7 +15,7 @@ stop1 = strfind(dnaseq,'taa');
 stop2 = strfind(dnaseq,'tag');
 stop3 = strfind(dnaseq,'tga');
 
-stop = sort([stop1,stop2,stop3])
+stop = sort([stop1,stop2,stop3]);
 if length(stop)<0
     disp ('no stop codons. please pick a new sequence.')
 else

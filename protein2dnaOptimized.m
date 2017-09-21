@@ -1,6 +1,41 @@
-function DNAseq = protein2dna (AAseq)
+%Copy your function protein2dna.m from part 2 to a new
+% function called protein2dnaOptimized.m that produces a codon-optimized DNA sequence using the 
+% information in the third column of codons.csv. 
+% In other words, for any amino acid, it always uses the codon that appears
+% most frequently in the human proteome.
+
+
+function DNAseq = protein2dnaOptimized (AAseq)
         q = 1;
         p = 1;
+aalist = importdata('codons.csv',',')
+
+Gly
+Glu
+Asp
+Val
+Ala
+Lys
+Asn
+Met
+Ile
+Thr
+Trp
+Cys
+End
+Tyr
+Phe
+Ser
+Arg
+Gln
+His
+Leu
+Pro
+
+
+
+
+
 while q < length(AAseq)
     switch AAseq(q)
         case 'F'

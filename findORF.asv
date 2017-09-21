@@ -1,4 +1,4 @@
-function [ORFlength, start_pos, stop_pos] = findORF(dnaseq)
+function {ORFlength,start_pos;stop_pos = findORF(dnaseq)
 %Function to find the length of the longest open reading frame of a
 %sequences called dnaseq
 
@@ -7,16 +7,16 @@ dnaseq = lower(dnaseq);
 
 start = strfind(dnaseq,'atg')%finds start codon
 
-if start == 0
+if length(start)< 1
     disp ('no start codons. please pick a new sequence.')
 else
-start_pos = start(1,1)
-stop1 = strfind(dnaseq,'taa')
-stop2 = strfind(dnaseq,'tag')
-stop3 = strfind(dnaseq,'tga')
+start_pos = start(1,1);
+stop1 = strfind(dnaseq,'taa');
+stop2 = strfind(dnaseq,'tag');
+stop3 = strfind(dnaseq,'tga');
 
 stop = sort([stop1,stop2,stop3])
-if stop == 0
+if length(stop)<0
     disp ('no stop codons. please pick a new sequence.')
 else
 
@@ -27,11 +27,20 @@ else
           q = q+1;
       end
       end
-end
-for iii = 1:length(stopcodons)
-    diffcheck = stopcodons(iii,:)-start_pos
-    if 
 
+ORFlength = 0;
+if length(stopcodons)<1
+disp ('no stop codons in reading frame. please pick a new sequence.')
+else
+for iii = 1:length(stopcodons)
+    diffcheck = stopcodons(iii,:)-start_pos;
+    if diffcheck > ORFlength
+        ORFlength = diffcheck;
+        stop_pos = stopcodons(iii,:);
+end
+end
+end
+end
 end
 end
 

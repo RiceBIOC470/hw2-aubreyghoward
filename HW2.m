@@ -39,7 +39,8 @@ seq = randdnaseq(500)
 % implement this. Your function should also work whether the entered dna
 % sequence is uppercase, lowercase, or some mixture. The builtin MATLAB functions
 % lower and upper could be useful for this. 
-findORF(seq)
+orf = findORF(seq)
+
 
 
 % Part 3. Write another function called probabilityORF that utilizes the functions from 
@@ -47,7 +48,7 @@ findORF(seq)
 % returns the probability that that a sequence of length N contains an ORF
 % of at least length N_ORF
 
-probabilityORF(1000,100)
+%probabilityORF(1000,100)
 
 % Part4. Write  a final function called plotProbabilityORF.m which takes
 % N_ORF as an argument and makes a plot of the probabily of having an
@@ -58,7 +59,6 @@ probabilityORF(1000,100)
 % Part 5. Write code that uses your function from part 4 to make a single
 % plot with separate curves for ORF lengths 100,200,300,and 400. Make sure
 % your plot has appropriate axis labels and legend. 
-
 %% Problem 3. Codon translation and optimization
 
 % DNA sequence gets translated into protein through a code known as the
@@ -72,14 +72,16 @@ probabilityORF(1000,100)
 % translation should start from the 1st, 2nd or 3rd base pair (that is,
 % which reading frame to use). Make your code returns an error and
 % appropriate message if frame isn't 1,2, or 3. 
-dna2protein(seq,1)
+proteinseq = dna2protein(seq,1)
 
 % Part 2. Write code to turn your protein sequence back into DNA sequence.
 % Call your function protein2dna.m
 % Notice that there isn't a unique way to do this. For example, there are 4
 % different codons that correspond to the amino acid Gly. For a first pass,
 % choose one of these codons at random.
-%
+
+rev_seq = protein2dna(proteinseq)
+%%
 % Part 3. The third column of the codons.csv file contains the frequency of
 % this codon's use in the human proteome in units of number of appearances per
 % thousand codons. Some codons are used more than others. For example,
@@ -93,4 +95,4 @@ dna2protein(seq,1)
 % information in the third column of codons.csv. 
 % In other words, for any amino acid, it always uses the codon that appears
 % most frequently in the human proteome. 
-%
+protein2dnaOptimized(proteinseq)
