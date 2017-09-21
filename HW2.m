@@ -27,10 +27,10 @@ zz = meannonan(xx)
 
 %% Problem 2. ORFs using functions
 % In this problem we will use functions to simplify and extend our code from HW1, prob 2 
-
+clear all
 % Part 1. Fill in the function randdnaseq.m in this repository so that it returns a random sequence
 % of length N. 
-seq = randdnaseq(200)
+seq = randdnaseq(500)
 
 % Part 2. Fill in the function findORF.m in this repository so that takes any dna
 % sequence as an input and returns the length of the longest open
@@ -39,11 +39,15 @@ seq = randdnaseq(200)
 % implement this. Your function should also work whether the entered dna
 % sequence is uppercase, lowercase, or some mixture. The builtin MATLAB functions
 % lower and upper could be useful for this. 
+findORF(seq)
+
 
 % Part 3. Write another function called probabilityORF that utilizes the functions from 
 % Parts 1 and 2. It should take two inputs - a sequence length (N) and an length  of an ORF (N_ORF) and
 % returns the probability that that a sequence of length N contains an ORF
 % of at least length N_ORF
+
+probabilityORF(1000,100)
 
 % Part4. Write  a final function called plotProbabilityORF.m which takes
 % N_ORF as an argument and makes a plot of the probabily of having an
@@ -68,7 +72,7 @@ seq = randdnaseq(200)
 % translation should start from the 1st, 2nd or 3rd base pair (that is,
 % which reading frame to use). Make your code returns an error and
 % appropriate message if frame isn't 1,2, or 3. 
-
+dna2protein(seq,1)
 
 % Part 2. Write code to turn your protein sequence back into DNA sequence.
 % Call your function protein2dna.m
