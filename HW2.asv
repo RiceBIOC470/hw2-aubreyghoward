@@ -18,8 +18,7 @@ zz = meannonan(xx)
 %Adam: the function mean will simply average each column and return a row
 %vector. Since one of the values in column 2 is a NaN, then that average
 %cannot be computed. The meannonan will replace any NaN with an empty
-%bracket, but also reoder the array in to a single row array. This will
-%then yield the average of the entire row.
+%bracket, which will allow for 
 
 % Part 2. Modify the meannonan code so that it behaves as the mean function
 % and produces a row vector where each entry is the average of each column
@@ -30,7 +29,6 @@ zz = meannonan(xx)
 
 % Part 1. Fill in the function randdnaseq.m in this repository so that it returns a random sequence
 % of length N. 
-seq = randdnaseq(200)
 
 % Part 2. Fill in the function findORF.m in this repository so that takes any dna
 % sequence as an input and returns the length of the longest open
