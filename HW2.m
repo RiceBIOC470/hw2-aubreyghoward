@@ -96,3 +96,5 @@ rev_seq = protein2dna(proteinseq)
 % In other words, for any amino acid, it always uses the codon that appears
 % most frequently in the human proteome. 
 protein2dnaOptimized(proteinseq)
+
+

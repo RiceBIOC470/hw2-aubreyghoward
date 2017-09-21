@@ -8,38 +8,38 @@
 function DNAseq = protein2dnaOptimized (AAseq)
         q = 1;
         p = 1;
-aalist = importdata('codons.csv',',')
+codons = importdata('codons.csv',',')
+aalist = [codons.textdata(2:length((codons.textdata)'),1)];
+aalist = unique(aalist);
+aalist(:,2)= {[0]};
+aalist(:,3)={'no data'}
 
-Gly
-Glu
-Asp
-Val
-Ala
-Lys
-Asn
-Met
-Ile
-Thr
-Trp
-Cys
-End
-Tyr
-Phe
-Ser
-Arg
-Gln
-His
-Leu
-Pro
+for ii = 1:length((codons.textdata)')
+ii
+    for iii = 1:length((aalist)')
+iii
+        if strcmp(aalist(iii,1),codons.textdata(ii,1)) == false
+        else
+            disp('tis true')
+            aalist(iii,2)
+            codons.data(ii,1)
+            if cell2mat(aalist(iii,2)) > (codons.data(ii,1))
+                aalist(iii,2)= codons.data(ii,1)
+                aalist(iii,3) = codons.textdata(ii,2)
+            end
+        end
+    end
+end
 
-
+aalist
 
 
 
 while q < length(AAseq)
     switch AAseq(q)
         case 'F'
-            DNAseq(p:p+2) = 'TTT';
+            %index = find(aalist(:,1),contains(aalist(:,1),'Phe'),'first')
+            DNAseq(p:p+2) = aalist(index,3)
         case 'L'
             DNAseq(p:p+2) = 'CTT';
         case 'M'
