@@ -39,7 +39,7 @@ seq = randdnaseq(500)
 % implement this. Your function should also work whether the entered dna
 % sequence is uppercase, lowercase, or some mixture. The builtin MATLAB functions
 % lower and upper could be useful for this. 
-orf = findORF(seq)
+[ORFlength,start_pos,stop_pos] = findORF(seq)
 
 
 
@@ -48,13 +48,15 @@ orf = findORF(seq)
 % returns the probability that that a sequence of length N contains an ORF
 % of at least length N_ORF
 
-%probabilityORF(1000,100)
+probabilityORF(1000,900)
 
+%%
 % Part4. Write  a final function called plotProbabilityORF.m which takes
 % N_ORF as an argument and makes a plot of the probabily of having an
 % ORF at least this long as a function of the dnasequence length. Decide how the
 % code should determine the lengths of dna sequence to test and implement
 % your decision. 
+plotProbabilityORF(100)
 
 % Part 5. Write code that uses your function from part 4 to make a single
 % plot with separate curves for ORF lengths 100,200,300,and 400. Make sure
