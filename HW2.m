@@ -1,3 +1,17 @@
+% GB Comments
+1a. 100
+1b. 100
+2a. 100
+2b. 100
+2c. 100
+2d. 100
+2e. 0 No work provided. 
+3a.  100
+3b. 100 
+3c.  25 function does not work for me and tried working it out. When using the find function, need to change it a matrix and instead of a cell array. Once that was changed, I ran into several other issue that I couldn’t resolve. 
+Overall: 83
+
+
 %% Problem 1. 
 % in the repository you will find the meannonan.m function we discussed in
 % class which produced the mean of a vector of numbers that ignores values
